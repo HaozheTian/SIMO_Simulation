@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css">
+        body{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h1{
+            color: rgb(0, 68, 253);
+            text-align: center;
+            font-size: 140%;
+            border-style: solid;
+            border-width: 0 0 2px 0;
+            border-color: #216783;
+        }
+        .task{
+            width: 55%;
+            margin: auto;
+            padding: 0 5%;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 6px;
+            border-color: #216783;
+        }
+        a{
+            color: rgb(4, 154, 255);
+        }
+        .subtask{
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+            border-style: solid;
+            border-width: 2px;
+            border-color: #216783;
+            border-radius: 3px;
+            padding: 0% 1%;
+        }
+        h4{
+            text-align: center;
+            font-size: 80%;
+        }
+    </style>
+</head>
+
+<body>
+
+<header style="text-align: center;">
+    <p>This html is an index of functions called in each task's script</p>
+</header>
+
+<div class="task">
+    <h1>Task 1</h1>
+
+    <h3 id="t11">Tx Side</h3>
+    <ul>
+        <li>Image to Bits: <a href = "fImageSource.m">fImageSource.m</a></li>
+        <li>Generate M-sequence: <a href = "fMSeqGen.m">fMSeqGen.m</a></li>
+        <li>Generate gold sequence: <a href = "fGoldSeq.m">fGoldSeq.m</a></li>
+        <li>Bits to symbols: <a href = "fDSQPSKModulator.m">fDSQPSKModulator.m</a></li>
+        
+    </ul>
+
+    <h3 id="t12">Channel Simulation</h3>
+    <ul>
+        <li>Transmission: <a href = "fChannel.m">fChannel.m</a></li>        
+    </ul>
+
+    <h3 id="t13">Rx Side</h3>
+    <ul>
+        <li>Estimate Delay: <a href = "fChannelDelayEstimation.m">fChannelDelayEstimation.m</a></li> 
+        <li>Desired symbols: <a href = "fDiversityCombine.m">fDiversityCombine.m</a><br />(No divresity for single path)</li>
+        <li>Symbols to Bits: <a href = "fDSQPSKDemodulator.m">fDSQPSKDemodulator.m</a></li>
+        <li>Bits to Image: <a href = "fImageSink.m">fImageSink.m</a></li>
+    </ul>
+</div>
+
+<div class="task">
+    <h1>Task 2</h1>
+
+    <h3>Tx Side</h3>
+    <ul>
+        <li>Same as <a href = "#t11">Task 1</a></li>
+    </ul>
+
+    <h3>Channel Simulation</h3>
+    <ul>
+        <li>Same as <a href = "#t11">Task 1</a></li>
+    </ul>
+
+    <h3>Rx Side</h3>
+    <ul>
+        <li>Estimation: </li>
+        <div class="subtask">
+            <h4>Known beta</h4>
+            Same as <a href = "#t11">Task 1</a>
+        </div>
+        <div class="subtask">
+            <h4>Try estimate beta using histogram</h4>
+            <a href = "fChannelEstimationHist.m">fChannelEstimationHist.m</a>
+        </div>
+        <li>The rest is the same as <a href = "#t11">Task 1</a></li>
+    </ul>
+</div>
+
+<div class="task">
+    <h1>Task 3</h1>
+
+    <h3>Tx Side</h3>
+    <ul>
+        <li>Same as <a href = "#t11">Task 1</a></li>
+    </ul>
+
+    <h3>Channel Simulation</h3>
+    <ul>
+        <li>Same as <a href = "#t11">Task 1</a></li>
+    </ul>
+
+    <h3>Rx Side</h3>
+    <div class="subtask">
+        <h4>Space time Decoupled</h4>
+        <ul>
+            <li>Estimate DOA: <a href = "fChannelDOAEstimation.m">fChannelDOAEstimation.m</a></li>
+            <li>Reception: <a href = "fSuperresBeamforming.m">fSuperresBeamforming.m</a></li>
+            <li>The rest is the same as <a href = "#t11">Task 1</a></li>
+        </ul>
+    </div>
+    <div class="subtask">
+        <h4 id="t3">Spatio-temporal</h4>
+        <li>Extension: <a href = "fExtension.m">fExtension.m</a></li>
+        <li>Estimation: <a href = "fSpatioTemporalEstimation.m">fSpatioTemporalEstimation.m</a></li>
+        <li>Reception: <a href = "fSTARBeamforming.m">fSTARBeamforming.m</a></li>
+        <li>The rest is the same as <a href = "#t11">Task 1</a></li>
+    </div>
+</div>
+
+<div class="task">
+    <h1>Task 4</h1>
+    <h3>Rx Side</h3>
+    <ul>
+        <li>Generate M-sequence: <a href = "fMSeqGen.m">fMSeqGen.m</a></li>
+        <li>Generate gold sequence: <a href = "fGoldSeq.m">fGoldSeq.m</a></li>
+        <li>The rest is the same as <a href = "#t3">Task 3 Spatio-temporal</a></li>
+    </ul>
+</div>
+
+</body>
